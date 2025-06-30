@@ -4,10 +4,10 @@ name: Deploy multi-architecture Docker images with buildx
 on:
   pull_request:
     branches:
-      - "master"
+      - "main"
   push:
     branches:
-      - "master"
+      - "main"
     tags:
       - "*"
 
@@ -18,7 +18,7 @@ permissions:
 jobs:
   buildx:
     # This workflow is only of value for simonrupf/docker-chronyd repo and would always be skipped in forks
-    if: github.repository == 'simonrupf/docker-chronyd'
+    if: github.repository == 'henryhst/ha-chronyd'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
