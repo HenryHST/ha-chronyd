@@ -25,7 +25,7 @@ jobs:
     permissions:
       contents: read
       issues: write
-      #packages: write  #checkov fix
+      packages: write  
       #pull-requests: write #checkov fix
       # This is used to complete the identity challenge
       # with sigstore/fulcio when running outside of PRs.
