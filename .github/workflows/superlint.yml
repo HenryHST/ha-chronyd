@@ -27,9 +27,9 @@ jobs:
         uses: super-linter/super-linter@v8.0.0 # x-release-please-version
         env:
           VALIDATE_YAML_PRETTIER: false
-          VALIDATE_DOCKERFILE_HADOLINT: true
+          VALIDATE_DOCKERFILE_HADOLINT: false
           VALIDATE_BASH: true
-          VALIDATE_BASH_EXEC: false
+          VALIDATE_BASH_EXEC: true
           VALIDATE_CSS: false
           VALIDATE_CSS_PRETTIER: false
           VALIDATE_CHECKOV: false 
@@ -40,7 +40,7 @@ jobs:
           VALIDATE_GITHUB_ACTIONS: false
           VALIDATE_JSCPD: false
           VALIDATE_MARKDOWN: true
-          VALIDATE_MARKDOWN_PRETTIER: false
+          VALIDATE_MARKDOWN_PRETTIER: true
           VALIDATE_SHELL_SHFMT: false
           # install package 'prettier-plugin-astro issue #38
           VALIDATE_JSON_PRETTIER: false
