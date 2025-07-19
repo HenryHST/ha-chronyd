@@ -42,10 +42,12 @@ jobs:
         with:
           ref: ${{ github.ref }}
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-        with:
-          platforms: arm64,amd64
-          
+      #  uses: docker/setup-qemu-action@v3
+      #  with:
+      #    platforms: arm64,amd64
+        run: |
+          docker run --privileged --rm tonistiigi/binfmt --install all  
+      
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
       - name: Install cosign
