@@ -51,9 +51,13 @@ jobs:
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
       - name: Install cosign
-        if: github.event_name != 'pull_request'
-        run: go install github.com/sigstore/cosign/v2/cmd/cosign@v2.4.0
-
+        # if: github.event_name != 'pull_request'
+        # run: go install github.com/sigstore/cosign/v2/cmd/cosign@v2.4.0
+        run: |
+          curl -Lo cosign https://github.com/sigstore/cosign/releases/latest/download/cosign-linux-amd64
+          chmod +x cosign
+          sudo mv cosign /usr/local/bin/cosign
+          
       # Set up BuildKit Docker container builder to be able to build
       # multi-platform images and export cache
       # https://github.com/docker/setup-buildx-action
