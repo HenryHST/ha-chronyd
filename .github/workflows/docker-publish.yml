@@ -23,10 +23,10 @@ jobs:
     runs-on: ubuntu-latest
     #runs-on: [self-hosted, Linux, X64]
     permissions:
-      #contents: write
+      contents: read
       issues: write
-      packages: write
-      pull-requests: write
+      #packages: write  #checkov fix
+      #pull-requests: write #checkov fix
       # This is used to complete the identity challenge
       # with sigstore/fulcio when running outside of PRs.
       id-token: write
