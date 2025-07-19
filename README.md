@@ -40,7 +40,7 @@ $> docker run --name=ntp                                           \
 
 ### With Docker Compose
 
-Using the docker-compose.yml file included in this git repo, you can build the container yourself (should you choose to).
+Using the docker-compose.yml file included in this Git repository, you can build the container yourself (should you choose to).
 
 
 ```
@@ -70,7 +70,7 @@ $> docker service logs -f chronyd-ntp
 
 ### From a Local command line
 
-Using the vars file in this git repo, you can update any of the variables to reflect your
+Using the vars file in this Git repository, you can update any of the variables to reflect your
 environment. Once updated, simply execute the build then run scripts.
 
 ```
@@ -186,7 +186,7 @@ By default, chronyd will not try to make any adjustments of the clock. It will a
 and still track its offset and frequency relative to the estimated true time. This allows chronyd to run without
 the capability to adjust or set the system clock in order to operate as an NTP server.
 
-Enabling the control requires starting the service as root, granting SYS_TIME capability and a container run-time allowing that access:
+Enabling the control requires starting the service as root, granting SYS_TIME capability and a container runtime allowing that access:
 
 ```yaml
   ...
