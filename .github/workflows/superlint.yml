@@ -1,0 +1,51 @@
+---
+name: Lint
+on: # yamllint disable-line rule:truthy
+  push: null
+  pull_request: null
+
+permissions: {}
+jobs:
+  build:
+    name: Lint
+    #runs-on: [self-hosted, Linux, X64]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+      # To report GitHub Actions status checks
+      statuses: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          # super-linter needs the full git history to get the
+          # list of files that changed across commits
+          fetch-depth: 0
+      - name: Super-linter
+        uses: super-linter/super-linter@v7.4.0 # x-release-please-version
+        env:
+          VALIDATE_YAML_PRETTIER: false
+          VALIDATE_DOCKERFILE_HADOLINT: false
+          VALIDATE_BASH: false
+          VALIDATE_BASH_EXEC: false
+          VALIDATE_CSS: false
+          VALIDATE_CSS_PRETTIER: false
+          VALIDATE_JAVASCRIPT_PRETTIER: false
+          VALIDATE_ENV: false
+          # set VALIDATE_GITHUB_ACTIONS: true 
+          VALIDATE_GITHUB_ACTIONS: false
+          VALIDATE_JSCPD: false
+          VALIDATE_MARKDOWN: false
+          VALIDATE_MARKDOWN_PRETTIER: false
+          VALIDATE_SHELL_SHFMT: false
+          # install package 'prettier-plugin-astro issue #38
+          VALIDATE_JSON_PRETTIER: false
+          VALIDATE_TSX: false
+          # install package 'prettier-plugin-astro issue #38
+          VALIDATE_TYPESCRIPT_PRETTIER: false
+          # bugfix #39
+          VALIDATE_TYPESCRIPT_ES: false
+          # To report GitHub Actions status checks
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
