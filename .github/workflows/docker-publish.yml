@@ -50,9 +50,7 @@ jobs:
       # https://github.com/sigstore/cosign-installer
       - name: Install cosign
         if: github.event_name != 'pull_request'
-        uses: sigstore/cosign-installer@d58896d6a1865668819e1d91763c7751a165e159 # v3.9.2
-        with:
-          cosign-release: 'v2.2.4'
+        run: go install github.com/sigstore/cosign/v2/cmd/cosign@v2.4.0
 
       # Set up BuildKit Docker container builder to be able to build
       # multi-platform images and export cache
@@ -85,7 +83,7 @@ jobs:
         uses: docker/build-push-action@263435318d21b8e681c14492fe198d362a7d2c83 # v6.18.0
         with:
           context: .
-          platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/riscv64
+          platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
