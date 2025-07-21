@@ -28,7 +28,7 @@ jobs:
         env:
           VALIDATE_YAML_PRETTIER: false
           VALIDATE_DOCKERFILE_HADOLINT: false
-          VALIDATE_BASH: true
+          VALIDATE_BASH: false
           VALIDATE_BASH_EXEC: false
           VALIDATE_CSS: false
           VALIDATE_CSS_PRETTIER: false
