@@ -33,17 +33,15 @@ jobs:
           VALIDATE_CSS: false
           VALIDATE_CSS_PRETTIER: false
           VALIDATE_CHECKOV: false 
-          # set checkov
           VALIDATE_JAVASCRIPT_PRETTIER: false
           VALIDATE_ENV: false
-          # set VALIDATE_GITHUB_ACTIONS true 
           VALIDATE_GITHUB_ACTIONS: false
           VALIDATE_JSCPD: false
           VALIDATE_MARKDOWN: true
           VALIDATE_MARKDOWN_PRETTIER: true
           VALIDATE_SHELL_SHFMT: false
           # install package 'prettier-plugin-astro issue #38
-          VALIDATE_JSON_PRETTIER: false
+          VALIDATE_JSON_PRETTIER: true
           VALIDATE_TSX: false
           # install package 'prettier-plugin-astro issue #38
           VALIDATE_TYPESCRIPT_PRETTIER: false
