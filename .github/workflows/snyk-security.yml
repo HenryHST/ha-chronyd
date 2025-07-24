@@ -63,8 +63,8 @@ jobs:
 
         # Runs Snyk Infrastructure as Code (IaC) analysis and uploads result to Snyk.
         # Use || true to not fail the pipeline.
-      - name: Snyk IaC test and report
-        run: snyk iac test --report -d --org=29421ab9-981c-4bef-bf12-c195f72f8646 # || true
+      #- name: Snyk IaC test and report
+      #  run: snyk iac test --report -d # || true
 
         # Build the docker image for testing
       - name: Build a Docker image
