@@ -2,9 +2,9 @@
 services:
   ntp:
     build: .
-    image: henryhst/ha-chronyd:latest
+    image: henryhst/ha-chronyd:main
     container_name: ntp
-    restart: always
+    restart: unless-stopped
     read_only: true
     tmpfs:
       - /etc/chrony:rw,mode=1750,uid=100,gid=101
@@ -19,7 +19,7 @@ services:
 #     devices:
 #       - /dev/ptp0:/dev/ptp0
     environment:
-      - NTP_SERVERS=time.cloudflare.com
+      - NTP_SERVERS=de.pool.ntp.org
       - LOG_LEVEL=0
 #      - TZ=Europe/Berlin
 #      - NOCLIENTLOG=true

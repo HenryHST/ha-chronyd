@@ -1,11 +1,16 @@
 FROM alpine:3.22
 
 ARG BUILD_DATE
+ARG GIT_BUILD_HASH
+ARG VERSION
+ENV GIT_BUILD_HASH=$GIT_BUILD_HASH
 
 # first, a bit about this container
 LABEL org.opencontainers.image.created="${BUILD_DATE}" \
       org.opencontainers.image.authors="Henry Stadthagen <h.stadthagen@me.com>" \
-      org.opencontainers.image.documentation=https://github.com/henryhst/ha-chronyd
+      org.opencontainers.image.documentation="https://github.com/henryhst/ha-chronyd" \
+      org.opencontainers.image.version=${VERSION} \
+      org.opencontainers.image.revision=${GIT_BUILD_HASH}
 
 # default configuration
 ENV NTP_DIRECTIVES="ratelimit\nrtcsync"

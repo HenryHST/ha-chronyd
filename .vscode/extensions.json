@@ -3,7 +3,12 @@
     "adrianwilczynski.alpine-js-intellisense",
     "astro-build.astro-vscode",
     "bradlc.vscode-tailwindcss",
+    "github.vscode-github-actions",
+    "EditorConfig.EditorConfig",
+    "Gruntfuggly.todo-tree",
     "esbenp.prettier-vscode",
+    "bpruitt-goddard.mermaid-markdown-syntax-highlighting",
+    "redhat.vscode-yaml",
     "frontmatter.frontmatter-vscode",
     "unifiedjs.vscode-mdx"
   ],
